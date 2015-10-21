@@ -35,7 +35,7 @@
     // is "tap.aif"
     _soundFileURLRef  = CFBundleCopyResourceURL (
                                                  mainBundle,
-                                                 CFSTR ("bullet_3"),
+                                                 CFSTR ("bomb_1"),
                                                  CFSTR ("wav"),
                                                  NULL
                                                  );
@@ -58,9 +58,10 @@
     newPlayer =
     [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL
                                            error: nil];
+    
     newPlayer.delegate = self;
     newPlayer.volume = 0.5;
-//    [newPlayer setNumberOfLoops:-1];
+    [newPlayer setNumberOfLoops:2];
     [newPlayer prepareToPlay];
     
     

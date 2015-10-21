@@ -17,6 +17,8 @@
 		B598B2AD1BD53E4E00584220 /* demo_SoundUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B598B2AC1BD53E4E00584220 /* demo_SoundUITests.m */; };
 		B598B2BB1BD5C33900584220 /* bullet_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = B598B2BA1BD5C33900584220 /* bullet_3.wav */; settings = {ASSET_TAGS = (); }; };
 		B598B2BD1BD5EBCD00584220 /* bg_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B598B2BC1BD5EBCD00584220 /* bg_sound.wav */; settings = {ASSET_TAGS = (); }; };
+		B598B3461BD6773800584220 /* bomb_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = B598B3451BD6773800584220 /* bomb_1.wav */; settings = {ASSET_TAGS = (); }; };
+		B598B3481BD677AD00584220 /* bullet_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = B598B3471BD677AD00584220 /* bullet_2.wav */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		B598B2AE1BD53E4E00584220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B598B2BA1BD5C33900584220 /* bullet_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bullet_3.wav; path = demo_Sound/bullet_3.wav; sourceTree = "<group>"; };
 		B598B2BC1BD5EBCD00584220 /* bg_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bg_sound.wav; sourceTree = "<group>"; };
+		B598B3451BD6773800584220 /* bomb_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bomb_1.wav; sourceTree = "<group>"; };
+		B598B3471BD677AD00584220 /* bullet_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bullet_2.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				B598B2BA1BD5C33900584220 /* bullet_3.wav */,
+				B598B3451BD6773800584220 /* bomb_1.wav */,
+				B598B3471BD677AD00584220 /* bullet_2.wav */,
 				B598B2BC1BD5EBCD00584220 /* bg_sound.wav */,
 				B598B2861BD53E4E00584220 /* demo_Sound */,
 				B598B2A01BD53E4E00584220 /* demo_SoundTests */,
@@ -251,8 +257,10 @@
 			files = (
 				B598B2971BD53E4E00584220 /* LaunchScreen.storyboard in Resources */,
 				B598B2941BD53E4E00584220 /* Assets.xcassets in Resources */,
+				B598B3461BD6773800584220 /* bomb_1.wav in Resources */,
 				B598B2BB1BD5C33900584220 /* bullet_3.wav in Resources */,
 				B598B2BD1BD5EBCD00584220 /* bg_sound.wav in Resources */,
+				B598B3481BD677AD00584220 /* bullet_2.wav in Resources */,
 				B598B2921BD53E4E00584220 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
