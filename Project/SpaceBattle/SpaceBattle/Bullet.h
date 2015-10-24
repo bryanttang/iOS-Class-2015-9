@@ -9,5 +9,19 @@
 #import <UIKit/UIKit.h>
 
 @interface Bullet : UIView
+{
+    UIImageView *bulletView;
+    NSString *name;
+    CGFloat speed;
+
+}
+
+
+-(void)fire;
+- (instancetype)initWithFrame:(CGRect) frame;
+- (void)setupABulletWithName:(NSString*) name
+                       view:(NSString*) img
+                      speed:(CGFloat) speed;
+
 
 @end

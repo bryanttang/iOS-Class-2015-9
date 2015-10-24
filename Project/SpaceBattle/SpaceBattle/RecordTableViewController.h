@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface RecordTableViewController : UITableViewController
-
+{
+    NSMutableArray *records;
+}
+@property NSDictionary *bundle;
 @end

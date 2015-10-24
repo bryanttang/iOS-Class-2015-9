@@ -17,7 +17,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIButton * exit = [UIButton buttonWithType:UIButtonTypeCustom];
+    exit.frame = CGRectMake(self.view.frame.size.width - 90, 20, 80, 38);
+    exit.layer.cornerRadius = 19;
+    exit.backgroundColor = [UIColor colorWithRed:0.9 green:0.2 blue:0.2 alpha:0.6];
+    exit.titleLabel.font = [UIFont systemFontOfSize:12];
+    [exit setTitleColor:[UIColor colorWithWhite:0.5 alpha:1.0] forState:UIControlStateNormal];
+    [exit setTitle:@"Close" forState:UIControlStateNormal];
+    [exit addTarget:self action:@selector(backToPresented:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:exit];
+    
 }
+
+- (void)backToPresented:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -7,6 +7,7 @@
 //
 
 #import "RecordTableViewController.h"
+#import "RecordCell.h"
 
 @interface RecordTableViewController ()
 
@@ -17,11 +18,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSDictionary *rec1 = @{@"id":@"1", @"player":@"Bryant", @"ship":@"ship2", @"score":@"10000", @"date":@"2015-9-21"};
+    NSDictionary *rec2 = @{@"id":@"2", @"player":@"Jessie", @"ship":@"ship3", @"score":@"5600", @"date":@"2015-9-22"};
+    NSDictionary *rec3 = @{@"id":@"3", @"player":@"Thomas", @"ship":@"ship4", @"score":@"4300", @"date":@"2015-9-20"};
+    NSDictionary *rec4 = @{@"id":@"4", @"player":@"Teresa", @"ship":@"ship2", @"score":@"2000", @"date":@"2015-8-18"};
+    
+    records = [[NSMutableArray alloc] initWithArray:@[rec1, rec2, rec3, rec4]];
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"space_bg"]];
+    self.tableView.separatorColor = [UIColor colorWithWhite:0.8 alpha:0.4];
+    
+    [self.tableView reloadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    if (_bundle != nil) {
+        NSDictionary *ship = [_bundle objectForKey:@"ship"];
+        [records addObject:@{@"id":@"n",
+                             @"player": [ship objectForKey:@"name"],
+                             @"ship": [ship objectForKey:@"img"],
+                             @"score": [_bundle objectForKey:@"score"],
+                             @"date":@"2015-9-21"}];
+        [self.tableView reloadData];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,24 +54,31 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return records.count;
 }
 
-/*
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80.0;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    RecordCell *cell = [tableView dequeueReusableCellWithIdentifier:@"record_cell" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    // Configure the cell...
+    cell.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.5];
+    cell.name.text = [[records objectAtIndex:indexPath.row] objectForKey:@"player"];
+    cell.ship_img.image = [UIImage imageNamed:[[records objectAtIndex:indexPath.row] objectForKey:@"ship"]];
+    cell.score.text = [[records objectAtIndex:indexPath.row] objectForKey:@"score"];
+    cell.date.text = [[records objectAtIndex:indexPath.row] objectForKey:@"date"];
+    
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

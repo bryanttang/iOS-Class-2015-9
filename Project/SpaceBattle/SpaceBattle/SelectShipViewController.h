@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelectShipViewController : UIViewController
+@interface SelectShipViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+
+{
+    NSArray *ships;
+    
+    IBOutlet UILabel *s_name;
+    IBOutlet UILabel *s_desp;
+    IBOutlet UIImageView *s_img1;
+    IBOutlet UIImageView *s_img2;
+    IBOutlet UIImageView *s_img3;
+    IBOutlet UIPickerView *shipList;
+}
 
 @end

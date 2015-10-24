@@ -10,12 +10,45 @@
 
 @implementation Bullet
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
+- (instancetype)initWithFrame:(CGRect) frame{
+    
+    self = [super initWithFrame:frame];
+    
+    if (self != nil) {
+        
+        //Init shipView
+        
+        bulletView = [[UIImageView alloc] initWithFrame:self.bounds];
+        [self addSubview:bulletView];
+
+    }
+    
+    return self;
+    
+}
+
+
+- (void)setupABulletWithName:(NSString*) name_
+                       view:(NSString*) img
+                      speed:(CGFloat) speed_
+{
+    name = name_;
+    bulletView.image = [UIImage imageNamed:img];
+    speed = speed_;
+
+}
+
+
+-(void)fire{
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.transform = CGAffineTransformMakeTranslation(0, -600);
+                     } completion:^(BOOL finished) {
+                         self.alpha = 0.0;
+                         [self removeFromSuperview];
+                     }];
+}
 @end
