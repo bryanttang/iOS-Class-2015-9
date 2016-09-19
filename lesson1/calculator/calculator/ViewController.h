@@ -9,7 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    int store;
+    float store_f;
+    double store_d;
 
+}
+
+
+
+@property (strong, nonatomic) IBOutlet UILabel *display;
 
 @end
 
